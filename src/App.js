@@ -1,25 +1,29 @@
 import "./App.css";
 import Avatar from "./Components/Avatar/Avatar";
+import Contact from "./Components/Contact/Contact";
 import History from "./Components/History/History";
+import Hobby from "./Components/Hobby/Hobby";
 import Period from "./Components/Period/Period";
-import WebDeveloper from "./Components/WebDeveloper/WebDeveloper";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (
     <div className="BodyApp">
       <div className="BodyBlueArea">
         <Avatar />
-        <WebDeveloper />
+        <Profile />
+        <Contact/>
+        <Hobby/>
       </div>
       <div className="BodyWhiteArea">
-        <div >
-          <History icone={"icone de Mala"} campo={"Empregos"} />
+        <div style={{marginTop:"30px",width:"80%"}}>
+          <History  icone={"SuitCase"} campo={"Empregos"}/>
           <div>
             <ul>
               <li>
                 <Period
                   Date={"2016-2022"}
-                  Local={"Prefeitura"}
+                  Local={"Prefeitura Municipal de Ipaba"}
                   Work={"Vigia"}
                   Description={
                     "Atuei durante este periodo com exito em minhas atividades"
@@ -28,7 +32,7 @@ function App() {
               </li>
             </ul>
           </div>
-          <History icone={"icone de Livros"} campo={"Formação"} />
+          <History icone={"Hat"}  campo={"Formação"} />
           <div>
             <ul>
               <li>
@@ -49,7 +53,7 @@ function App() {
               </li>
             </ul>
           </div>
-          <History icone={"icone de Estrela"} campo={"Habilidades"} />
+          <History icone={"Book"}  campo={"Habilidades"} />
           <div>
             <ul>
               <li></li>

@@ -1,5 +1,5 @@
 .AvatarArea {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,4 +14,10 @@
 }
 .AvatarTitle {
   text-align: center;
+  margin: 0px;
+}
+.AvatarArea h3{
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
 }

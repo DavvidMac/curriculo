@@ -1,0 +1,10 @@
+.HistoryHead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.HistoryHead .Field{
+    margin-left:10px
+ }
+ 

@@ -1,18 +1,21 @@
-.BodyApp{
+.BodyApp {
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
   background-color: black;
-  display:flex;
+  display: flex;
 }
-.BodyBlueArea{
+.BodyBlueArea {
   width: 340px;
-  background-color: #06bec0;
+  background-color: #333;
   color: white;
-
+  border-right: 2px solid #333;
 }
-.BodyWhiteArea{
+.BodyWhiteArea {
   background-color: #fff;
   color: #333;
   flex: 1;
-  display:flex;
+  display: flex;
   flex-direction: column;
- align-items:center ;
+  align-items: center;
 }

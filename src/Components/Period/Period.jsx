@@ -1,12 +1,12 @@
 import React from 'react'
-
+import './Period.css'
 const Period = ({Date,Local,Work,Description}) => {
   return (
-    <div>
+    <div className='PeriodContainer'>
         <h4>{Date}</h4>
-        <h2>{Local}</h2>
-        <h3>{Work}</h3>
-        <p>{Description}</p>
+        <p>{Local}</p>
+        <p>{Work}</p>
+        <p className='PeriodContainerDescription'>{Description}</p>
     </div>
   )
 }
