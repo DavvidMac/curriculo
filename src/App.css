@@ -6,7 +6,7 @@
   display: flex;
 }
 .BodyBlueArea {
-  width: 340px;
+  width: 40%;
   background-color: #333;
   color: white;
   border-right: 2px solid #333;
@@ -17,5 +17,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+@media print {
+  @page { 
+    size: 1000px 1400px;
+  }
 }

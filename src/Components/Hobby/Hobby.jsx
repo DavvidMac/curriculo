@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHeart,FaBookReader,FaRobot,FaRunning,FaBlender, FaJs,FaHtml5,FaCss3 } from "react-icons/fa";
+import { FaHeart,FaBookReader,FaRobot,FaRunning,FaBlender } from "react-icons/fa";
 import './Hobby.css'
 const Hobby = () => {
   return (

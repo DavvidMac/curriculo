@@ -15,11 +15,9 @@ if(icone==="Book"){
   return (
     <div>
       <div className="HistoryHead">
-        <div className="Icone">
-          {icone && <FaIco size={'40px'}/>}
-        </div>
-        <div className="Field">
-          <h2>{campo}</h2>
+          {icone && <FaIco size={'20px'}/>}
+        <div className="HistoryField">
+          <h3>{campo}</h3>
         </div>
       </div>
     </div>

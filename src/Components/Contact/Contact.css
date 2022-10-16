@@ -1,18 +1,23 @@
 .ContactHeader {
   display: flex;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 .ContactTitle {
 margin-left: 10px;
 
 }
 .ContactItem {
+  margin-left: 20px;
   display: flex;
   align-items: center;
   height: 34px;
 }
 .ContactItem h4{
-  margin-left: 30px;
+  margin-left: 20px;
   font-weight: 400;
+}
+h4 a{
+  text-decoration:none;
+  color: #fff;
 }

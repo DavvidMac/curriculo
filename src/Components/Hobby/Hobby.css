@@ -1,19 +1,20 @@
 .HobbyHeader {
   display: flex;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 .HobbyTitle {
 
   margin-left: 10px;
 }
 .HobbyItem {
+  margin-left: 20px;
   display: flex;
   align-items: center;
   height: 34px;
 }
 
 .HobbyItem h4 {
-    margin-left: 30px;
+    margin-left: 20px;
     font-weight: 400;
 }

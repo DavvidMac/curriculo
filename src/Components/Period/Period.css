@@ -1,8 +1,10 @@
 .PeriodContainer {
   line-height: 0.5;
-  border-bottom: 2px solid black;
+  border-bottom: 0.5px solid black;
 }
 .PeriodContainerDescription {
   line-height: 1;
-
+}
+.PeriodContainer  h3{
+  margin-top: 0;
 }

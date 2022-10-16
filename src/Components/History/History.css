@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
+    margin-left: 20px;
+    height: 25px;
 }
-.HistoryHead .Field{
-    margin-left:10px
+.HistoryHead .HistoryField{
+    margin-left:10px;
  }
- 

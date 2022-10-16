@@ -1,0 +1,14 @@
+.FooterIcone{
+    padding: 13px;
+}
+.FooterContainer{
+    background-color: #333;
+    color: #fff;
+    font-size: small;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
