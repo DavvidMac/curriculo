@@ -1,13 +1,12 @@
 import React from 'react'
-import avatar from "./avatar.jpg"
 import "./Avatar.css"
-const Avatar = () => {
+const Avatar = ({photo,nome,profissao}) => {
   return (
     <>
         <div className='AvatarArea'>
-            <img className='AvatarImg' src={avatar} alt='Dayvid Macedo'/>
-            <h2 className='AvatarTitle'>Dayvid Macedo</h2>
-            <p >WebDeveloper</p>
+            <img className='AvatarImg' src={photo?URL.createObjectURL(photo):''} alt='Dayvid Macedo'/>
+            <h2 className='AvatarTitle'>{nome}</h2>
+            <p >{profissao}</p>
         </div>
     </>
   )
