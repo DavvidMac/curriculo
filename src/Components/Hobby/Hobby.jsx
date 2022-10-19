@@ -1,10 +1,6 @@
 import React from "react";
 import {
   FaHeart,
-  FaBookReader,
-  FaRobot,
-  FaRunning,
-  FaBlender,
 } from "react-icons/fa";
 import "./Hobby.css";
 const Hobby = ({ listHobbies }) => {

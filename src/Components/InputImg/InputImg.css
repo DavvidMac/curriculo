@@ -1,0 +1,14 @@
+.InputImgContainer{
+    margin: 20px 0px 0 20px;
+}
+.InputImgLabel{
+    width:100px ;
+    background-color: transparent;
+    object-fit:scale-down;
+}
+.InputImgAvatar{
+    width: 100px;
+}
+.InputImg{
+    display: none;
+}

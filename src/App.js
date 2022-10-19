@@ -1,6 +1,5 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Curriculo from "./Pages/Curriculo/Curriculo";
 import Formulario from "./Pages/Formulario/Formulario";
 

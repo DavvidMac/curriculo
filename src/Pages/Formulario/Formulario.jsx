@@ -1,7 +1,9 @@
 import React from "react";
 import "./Formulario.css";
-import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Inputx from "../../Components/Inputx/Inputx";
+import FormBox from "../../Components/FormBox/FormBox";
+import InputImg from "../../Components/InputImg/InputImg";
 
 const Formulario = ({
   photo,
@@ -25,7 +27,7 @@ const Formulario = ({
   jobs,
   setJobs,
   graduation,
-  setGraduation
+  setGraduation,
 }) => {
   const [hobbie, setHobbie] = React.useState("");
 
@@ -58,54 +60,34 @@ const Formulario = ({
     setObs("");
   }
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <label className="labelInputimg">
-        {photo ? (
-          <img
-            width={"150px"}
-            alt="Avatar"
-            className=""
-            src={URL.createObjectURL(photo)}
-          />
-        ) : (
-          <FaUser />
-        )}
-        <input
-          name="Picture"
-          className="CadastroInputFile"
-          type="file"
-          placeholder="Photo"
-          onChange={(e) => setPhoto(e.target.files[0])}
-        ></input>
-      </label>
-      <label>
-        Nome:
-        <input
-          className=""
-          type="text"
-          placeholder="Nome"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Profissão:
-        <input
-          className=""
-          type="text"
-          placeholder="Profissão"
-          value={profissao}
-          onChange={(e) => setProfissao(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Perfil:
+    <div className="FormBody">
+      <h1 className="FormTitulo">Formulario</h1>
+      <FormBox titulo={"Usuário"}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
+          <InputImg photo={photo} setPhoto={setPhoto} />
+          <div style={{ marginTop: "30px",marginLeft:'10px' ,display: "flex",
+            flexDirection: "column",}}>
+            <Inputx
+              label={"Nome:"}
+              pHolder={"Nome"}
+              valor={nome}
+              setValor={setNome}
+            />
+            <Inputx
+              label={"Profissão:"}
+              pHolder={"Profissão"}
+              valor={profissao}
+              setValor={setProfissao}
+            />
+          </div>
+        </div>
+      </FormBox>
+      <FormBox titulo={"Perfil"}>
         <textarea
           className=""
           type="text"
@@ -113,169 +95,125 @@ const Formulario = ({
           value={profile}
           onChange={(e) => setProfile(e.target.value)}
         ></textarea>
-      </label>
-      <label>
-        Telefone
-        <input
-          className=""
-          type="text"
-          placeholder="Telefone"
-          value={contact}
-          onChange={(e) => setContact(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Facebook
-        <input
-          className=""
-          type="text"
-          placeholder="Facebook"
-          value={facebook}
-          onChange={(e) => setFacebook(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Instagram
-        <input
-          className=""
-          type="text"
-          placeholder="Instagram"
-          value={instagram}
-          onChange={(e) => setInstagram(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        GitHub
-        <input
-          className=""
-          type="text"
-          placeholder="GitHub"
-          value={gitHub}
-          onChange={(e) => setGitHub(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Hobbie
-        <input
-          className=""
-          type="text"
-          placeholder="Hobby"
-          value={hobbie}
-          onChange={(e) => setHobbie(e.target.value)}
-        ></input>
-        <button onClick={handleAddHobies}>add</button>
-      </label>
-      <ul>
-        {listHobbies?.map((hob, index) => (
-          <li key={index}>{hob}</li>
-        ))}
-      </ul>
-      <label>
-        Ficha
-        <input
-          className=""
-          type="text"
-          placeholder="Anoentrada-anoSaida"
-          value={ficha}
-          onChange={(e) => setFicha(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Empresa
-        <input
-          className=""
-          type="text"
-          placeholder="Empresa"
-          value={empresa}
-          onChange={(e) => setEmpresa(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Cargo
-        <input
-          className=""
-          type="text"
-          placeholder="Cargo"
-          value={cargo}
-          onChange={(e) => setCargo(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Descrição
-        <input
-          className=""
-          type="text"
-          placeholder="Descrição"
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
-        ></input>
-        <button onClick={handleAddJob}>add</button>
-      </label>
-      <ul>
-        {jobs?.map((item, index) => (
-          <li key={index}>
-            <p>
-              Data entrada e saida={item.ficha}
-              Local={item.empresa}
-              Work={item.cargo}
-              Description={item.descricao}
-            </p>
-          </li>
-        ))}
-      </ul>
-      <label>
-        Formação
-        <input
-          className=""
-          type="text"
-          placeholder="Formação"
-          value={ano}
-          onChange={(e) => setAno(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Instituição
-        <input
-          className=""
-          type="text"
-          placeholder="Instituição"
-          value={instituicao}
-          onChange={(e) => setInstituicao(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Curso
-        <input
-          className=""
-          type="text"
-          placeholder="Curso"
-          value={curso}
-          onChange={(e) => setCurso(e.target.value)}
-        ></input>
-      </label>
-      <label>
-        Obs
-        <input
-          className=""
-          type="text"
-          placeholder="Obs"
-          value={obs}
-          onChange={(e) => setObs(e.target.value)}
-        ></input>
-        <button onClick={handleAddGraduation}>add</button>
-      </label>
-      <ul>
-        {graduation?.map((item, index) => (
-          <li key={index}>
-            <p>
-              Data entrada e saida={item.ano}
-              Local={item.instituicao}
-              Work={item.curso}
-              Description={item.obs}
-            </p>
-          </li>
-        ))}
-      </ul>
+      </FormBox>
+      <FormBox titulo={"Social"}>
+          <Inputx
+            label={"Telefone:"}
+            pHolder={"Telefone"}
+            valor={contact}
+            setValor={setContact}
+          />
+          <Inputx
+            label={"Facebook:"}
+            pHolder={"Facebook"}
+            valor={facebook}
+            setValor={setFacebook}
+          />
+          <Inputx
+            label={"Instagram:"}
+            pHolder={"Instagram"}
+            valor={instagram}
+            setValor={setInstagram}
+          />
+          <Inputx
+            label={"GitHub:"}
+            pHolder={"GitHub"}
+            valor={gitHub}
+            setValor={setGitHub}
+          />
+      </FormBox>
+      <FormBox titulo={"Hobbies"}>
+        <Inputx
+          label={"Hobbie:"}
+          pHolder={"Hobbie"}
+          valor={hobbie}
+          setValor={setHobbie}
+        />
+        <button className="Formulariobutton" onClick={handleAddHobies}>add</button>
+        <ul>
+          {listHobbies?.map((hob, index) => (
+            <li key={index}>{hob}</li>
+          ))}
+        </ul>
+      </FormBox>
+      <FormBox titulo={"Ultimos empregos"}>
+        <Inputx
+          label={"Ficha:"}
+          pHolder={"Ficha"}
+          valor={ficha}
+          setValor={setFicha}
+        ></Inputx>
+        <Inputx
+          label={"Empresa:"}
+          pHolder={"Empresa"}
+          valor={empresa}
+          setValor={setEmpresa}
+        ></Inputx>
+        <Inputx
+          label={"Cargo:"}
+          pHolder={"Cargo"}
+          valor={cargo}
+          setValor={setCargo}
+        ></Inputx>
+        <Inputx
+          label={"Descrição:"}
+          pHolder={"Descrição"}
+          valor={descricao}
+          setValor={setDescricao}
+        />
+        <button className="Formulariobutton" onClick={handleAddJob}>add</button>
+        <ul>
+          {jobs?.map((item, index) => (
+            <li key={index}>
+              <p>
+                Data entrada e saida={item.ficha}
+                Local={item.empresa}
+                Work={item.cargo}
+                Description={item.descricao}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </FormBox>
+      <FormBox titulo={"Formação"}>
+        <Inputx
+          label={"Formação:"}
+          pHolder={"Formação"}
+          valor={ano}
+          setValor={setAno}
+        ></Inputx>
+        <Inputx
+          label={"Instituição:"}
+          pHolder={"Instituição"}
+          valor={instituicao}
+          setValor={setInstituicao}
+        ></Inputx>
+        <Inputx
+          label={"Curso:"}
+          pHolder={"Curso"}
+          valor={curso}
+          setValor={setCurso}
+        ></Inputx>
+        <Inputx
+          label={"Obs:"}
+          pHolder={"Obs"}
+          valor={obs}
+          setValor={setObs}
+        ></Inputx>
+        <button className="Formulariobutton" onClick={handleAddGraduation}>add</button>
+        <ul>
+          {graduation?.map((item, index) => (
+            <li key={index}>
+              <p>
+                Data entrada e saida={item.ano}
+                Local={item.instituicao}
+                Work={item.curso}
+                Description={item.obs}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </FormBox>
       <Link to="/Curriculo">Add</Link>
     </div>
   );
