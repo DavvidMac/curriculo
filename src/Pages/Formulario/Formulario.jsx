@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Inputx from "../../Components/Inputx/Inputx";
 import FormBox from "../../Components/FormBox/FormBox";
 import InputImg from "../../Components/InputImg/InputImg";
+import Ability from "../../Components/Abilities/Ability";
 
 const Formulario = ({
   photo,
@@ -238,12 +239,17 @@ const Formulario = ({
           ))}
         </ul>
       </FormBox>
+      <FormBox>
+        <Ability/>
+      </FormBox>
       <Link to="/Curriculo" onClick={save}>
         Add
       </Link>
     </div>
   );
 };
+
+
 //how convert file image to string64?
 
 
