@@ -59,6 +59,18 @@ const Formulario = ({
     setCurso("");
     setObs("");
   }
+  function save() {
+    window.localStorage.setItem("nome",nome);
+    window.localStorage.setItem("profissao",profissao);
+    window.localStorage.setItem("profile",profile);
+    window.localStorage.setItem("contact",contact);
+    window.localStorage.setItem("facebook",facebook);
+    window.localStorage.setItem("instagram",instagram);
+    window.localStorage.setItem("gitHub",gitHub);
+    window.localStorage.setItem("listHobbies",JSON.stringify(listHobbies));
+    window.localStorage.setItem("jobs",JSON.stringify(jobs));
+    window.localStorage.setItem("graduation",JSON.stringify(graduation));
+  }
   return (
     <div className="FormBody">
       <h1 className="FormTitulo">Formulario</h1>
@@ -70,8 +82,14 @@ const Formulario = ({
           }}
         >
           <InputImg photo={photo} setPhoto={setPhoto} />
-          <div style={{ marginTop: "30px",marginLeft:'10px' ,display: "flex",
-            flexDirection: "column",}}>
+          <div
+            style={{
+              marginTop: "30px",
+              marginLeft: "10px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Inputx
               label={"Nome:"}
               pHolder={"Nome"}
@@ -97,30 +115,30 @@ const Formulario = ({
         ></textarea>
       </FormBox>
       <FormBox titulo={"Social"}>
-          <Inputx
-            label={"Telefone:"}
-            pHolder={"Telefone"}
-            valor={contact}
-            setValor={setContact}
-          />
-          <Inputx
-            label={"Facebook:"}
-            pHolder={"Facebook"}
-            valor={facebook}
-            setValor={setFacebook}
-          />
-          <Inputx
-            label={"Instagram:"}
-            pHolder={"Instagram"}
-            valor={instagram}
-            setValor={setInstagram}
-          />
-          <Inputx
-            label={"GitHub:"}
-            pHolder={"GitHub"}
-            valor={gitHub}
-            setValor={setGitHub}
-          />
+        <Inputx
+          label={"Telefone:"}
+          pHolder={"Telefone"}
+          valor={contact}
+          setValor={setContact}
+        />
+        <Inputx
+          label={"Facebook:"}
+          pHolder={"Facebook"}
+          valor={facebook}
+          setValor={setFacebook}
+        />
+        <Inputx
+          label={"Instagram:"}
+          pHolder={"Instagram"}
+          valor={instagram}
+          setValor={setInstagram}
+        />
+        <Inputx
+          label={"GitHub:"}
+          pHolder={"GitHub"}
+          valor={gitHub}
+          setValor={setGitHub}
+        />
       </FormBox>
       <FormBox titulo={"Hobbies"}>
         <Inputx
@@ -129,7 +147,9 @@ const Formulario = ({
           valor={hobbie}
           setValor={setHobbie}
         />
-        <button className="Formulariobutton" onClick={handleAddHobies}>add</button>
+        <button className="Formulariobutton" onClick={handleAddHobies}>
+          add
+        </button>
         <ul>
           {listHobbies?.map((hob, index) => (
             <li key={index}>{hob}</li>
@@ -161,7 +181,9 @@ const Formulario = ({
           valor={descricao}
           setValor={setDescricao}
         />
-        <button className="Formulariobutton" onClick={handleAddJob}>add</button>
+        <button className="Formulariobutton" onClick={handleAddJob}>
+          add
+        </button>
         <ul>
           {jobs?.map((item, index) => (
             <li key={index}>
@@ -200,7 +222,9 @@ const Formulario = ({
           valor={obs}
           setValor={setObs}
         ></Inputx>
-        <button className="Formulariobutton" onClick={handleAddGraduation}>add</button>
+        <button className="Formulariobutton" onClick={handleAddGraduation}>
+          add
+        </button>
         <ul>
           {graduation?.map((item, index) => (
             <li key={index}>
@@ -214,9 +238,15 @@ const Formulario = ({
           ))}
         </ul>
       </FormBox>
-      <Link to="/Curriculo">Add</Link>
+      <Link to="/Curriculo" onClick={save}>
+        Add
+      </Link>
     </div>
   );
 };
+//how convert file image to string64?
+
+
+
 
 export default Formulario;
