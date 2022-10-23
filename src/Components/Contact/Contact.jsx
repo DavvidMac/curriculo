@@ -8,10 +8,6 @@ import {
   FaGithub
 } from "react-icons/fa";
 const Contact = ({ contact, facebook, instagram, gitHub }) => {
- /* contact='(31) 9 9205-1355'
-  facebook='https://www.facebook.com/dayvid.macedo.1/'
-  instagram='https://www.instagram.com/mr.potatohead_0/'
-  GitHub='https://github.com/DavvidMac'*/
   let face=facebook.split('https://www.facebook.com/')
   let inst=instagram.split('https://www.instagram.com/')
   let git=gitHub.split('https://github.com/')

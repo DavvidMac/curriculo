@@ -19,7 +19,14 @@ const Curriculo = ({
   gitHub,
   listHobbies,
   jobs,
-  graduation
+  graduation,
+  rust,
+  js,
+  react,
+  Html5,
+  Python,
+  Css3,
+  java,
 }) => {
   return (
     <>
@@ -40,7 +47,7 @@ const Curriculo = ({
             <History icone={"SuitCase"} campo={"Empregos"} />
             <div>
               <ul style={{ marginLeft: "30px" }}>
-                {jobs?.map((item,index) => (
+                {jobs?.map((item, index) => (
                   <li key={index}>
                     <Period
                       Date={item.ficha}
@@ -55,7 +62,7 @@ const Curriculo = ({
             <History icone={"Hat"} campo={"Formação"} />
             <div>
               <ul style={{ marginLeft: "30px" }}>
-              {graduation?.map((item,index) => (
+                {graduation?.map((item, index) => (
                   <li key={index}>
                     <Period
                       Date={item.ano}
@@ -68,7 +75,15 @@ const Curriculo = ({
               </ul>
             </div>
             <History icone={"Book"} campo={"Habilidades"} />
-            <Skill />
+            <Skill
+              rust={rust}
+              js={js}
+              react={react}
+              Html5={Html5}
+              Python={Python}
+              Css3={Css3}
+              java={java}
+            />
           </div>
         </div>
       </div>

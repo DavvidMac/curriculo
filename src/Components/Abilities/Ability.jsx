@@ -1,15 +1,20 @@
 import React from 'react'
 import './Ability.css'
 import { FaJava, FaHtml5, FaPython, FaCss3, FaReact, FaJs, FaRust } from "react-icons/fa";
-const Ability = () => {
-
-    const [js, setJs] = React.useState(false)
-    const [react, setReact] = React.useState(false)
-    const [Html5, setHtml5] = React.useState(false)
-    const [Python, setPython] = React.useState(false)
-    const [Css3, setCss3] = React.useState(false)
-    const [java, setJava] = React.useState(false)
-    const [rust, setRust] = React.useState(false)
+const Ability = ({rust,
+    setRust,
+    js,
+    setJs,
+    react,
+    setReact,
+    Html5,
+    setHtml5,
+    Python,
+    setPython,
+    Css3,
+    setCss3,
+    java,
+    setJava}) => {
 
     function handleChange(item, target) {
         item(target.checked)
@@ -36,7 +41,7 @@ const Ability = () => {
         if (window.localStorage.getItem("rust") !== null) {
             setRust(JSON.parse(window.localStorage.getItem("rust")))
         }
-    }, [])
+    }, [setJs,setRust,setJava,setCss3,setPython,setHtml5,setReact])
     React.useEffect(() => {
     window.localStorage.setItem("js", js);
         window.localStorage.setItem("react", react);

@@ -29,6 +29,20 @@ const Formulario = ({
   setJobs,
   graduation,
   setGraduation,
+  rust,
+  setRust,
+  js,
+  setJs,
+  react,
+  setReact,
+  Html5,
+  setHtml5,
+  Python,
+  setPython,
+  Css3,
+  setCss3,
+  java,
+  setJava,
 }) => {
   const [hobbie, setHobbie] = React.useState("");
 
@@ -61,16 +75,16 @@ const Formulario = ({
     setObs("");
   }
   function save() {
-    window.localStorage.setItem("nome",nome);
-    window.localStorage.setItem("profissao",profissao);
-    window.localStorage.setItem("profile",profile);
-    window.localStorage.setItem("contact",contact);
-    window.localStorage.setItem("facebook",facebook);
-    window.localStorage.setItem("instagram",instagram);
-    window.localStorage.setItem("gitHub",gitHub);
-    window.localStorage.setItem("listHobbies",JSON.stringify(listHobbies));
-    window.localStorage.setItem("jobs",JSON.stringify(jobs));
-    window.localStorage.setItem("graduation",JSON.stringify(graduation));
+    window.localStorage.setItem("nome", nome);
+    window.localStorage.setItem("profissao", profissao);
+    window.localStorage.setItem("profile", profile);
+    window.localStorage.setItem("contact", contact);
+    window.localStorage.setItem("facebook", facebook);
+    window.localStorage.setItem("instagram", instagram);
+    window.localStorage.setItem("gitHub", gitHub);
+    window.localStorage.setItem("listHobbies", JSON.stringify(listHobbies));
+    window.localStorage.setItem("jobs", JSON.stringify(jobs));
+    window.localStorage.setItem("graduation", JSON.stringify(graduation));
   }
   return (
     <div className="FormBody">
@@ -240,7 +254,22 @@ const Formulario = ({
         </ul>
       </FormBox>
       <FormBox>
-        <Ability/>
+        <Ability
+          rust={rust}
+          setRust={setRust}
+          js={js}
+          setJs={setJs}
+          react={react}
+          setReact={setReact}
+          Html5={Html5}
+          setHtml5={setHtml5}
+          Python={Python}
+          setPython={setPython}
+          Css3={Css3}
+          setCss3={setCss3}
+          java={java}
+          setJava={setJava}
+        />
       </FormBox>
       <Link to="/Curriculo" onClick={save}>
         Add
@@ -249,10 +278,6 @@ const Formulario = ({
   );
 };
 
-
 //how convert file image to string64?
-
-
-
 
 export default Formulario;
