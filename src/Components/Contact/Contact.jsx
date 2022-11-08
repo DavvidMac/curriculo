@@ -7,11 +7,10 @@ import {
   FaInstagram,
   FaGithub
 } from "react-icons/fa";
-const Contact = ({ telefone, facebook, instagram, GitHub }) => {
-  telefone='(31) 9 9205-1355'
-  facebook='https://www.facebook.com/dayvid.macedo.1/'
-  instagram='https://www.instagram.com/mr.potatohead_0/'
-  GitHub='https://github.com/DavvidMac'
+const Contact = ({ contact, facebook, instagram, gitHub }) => {
+  let face=facebook.split('https://www.facebook.com/')
+  let inst=instagram.split('https://www.instagram.com/')
+  let git=gitHub.split('https://github.com/')
   return (
     <div>
       <div className="ContactHeader">
@@ -21,19 +20,19 @@ const Contact = ({ telefone, facebook, instagram, GitHub }) => {
       <div style={{ marginLeft: "20px" }}>
         <div className="ContactItem">
           <FaPhone />
-          <h4>{telefone}</h4>
+          <h4>{contact}</h4>
         </div>
         <div className="ContactItem">
           <FaFacebook />
-          <h4><a href={facebook}>dayvid.macedo.1</a></h4>
+          <h4><a href={facebook}>{face}</a></h4>
         </div>
         <div className="ContactItem">
           <FaInstagram />
-          <h4> <a href={instagram}> mr.potatohead_0 </a> </h4>
+          <h4> <a href={instagram}> {inst} </a> </h4>
         </div>
         <div className="ContactItem">
           <FaGithub />
-          <h4> <a href={GitHub}>DavvidMac</a></h4>
+          <h4> <a href={gitHub}>{git}</a></h4>
         </div>
       </div>
     </div>

@@ -1,67 +1,151 @@
-import "./App.css";
-import Avatar from "./Components/Avatar/Avatar";
-import Contact from "./Components/Contact/Contact";
-import Footer from "./Components/Footer/Footer";
-import History from "./Components/History/History";
-import Hobby from "./Components/Hobby/Hobby";
-import Period from "./Components/Period/Period";
-import Profile from "./Components/Profile/Profile";
-import Skill from "./Components/Skill/Skill";
+import React from "react";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import Curriculo from "./Pages/Curriculo/Curriculo";
+import Formulario from "./Pages/Formulario/Formulario";
 
 function App() {
+  const [photo, setPhoto] = React.useState(null);
+  const [nome, setNome] = React.useState("");
+  const [profissao, setProfissao] = React.useState("");
+  const [profile, setProfile] = React.useState("");
+  const [contact, setContact] = React.useState("");
+  const [facebook, setFacebook] = React.useState("");
+  const [instagram, setInstagram] = React.useState("");
+  const [gitHub, setGitHub] = React.useState("");
+  const [listHobbies, setListHobbies] = React.useState([]);
+  const [jobs, setJobs] = React.useState([]);
+  const [graduation, setGraduation] = React.useState([]);
+  const [js, setJs] = React.useState(false);
+  const [react, setReact] = React.useState(false);
+  const [Html5, setHtml5] = React.useState(false);
+  const [Python, setPython] = React.useState(false);
+  const [Css3, setCss3] = React.useState(false);
+  const [java, setJava] = React.useState(false);
+  const [rust, setRust] = React.useState(false);
+
+  React.useEffect(() => {
+    if (window.localStorage.getItem("nome") !== null) {
+      setNome(window.localStorage.getItem("nome"));
+    }
+    if (window.localStorage.getItem("profissao") !== null) {
+      setProfissao(window.localStorage.getItem("profissao"));
+    }
+    if (window.localStorage.getItem("profile") !== null) {
+      setProfile(window.localStorage.getItem("profile"));
+    }
+    if (window.localStorage.getItem("contact") !== null) {
+      setContact(window.localStorage.getItem("contact"));
+    }
+    if (window.localStorage.getItem("facebook") !== null) {
+      setFacebook(window.localStorage.getItem("facebook"));
+    }
+    if (window.localStorage.getItem("instagram") !== null) {
+      setInstagram(window.localStorage.getItem("instagram"));
+    }
+    if (window.localStorage.getItem("gitHub") !== null) {
+      setGitHub(window.localStorage.getItem("gitHub"));
+    }
+    if (window.localStorage.getItem("listHobbies") !== null) {
+      setListHobbies(JSON.parse(window.localStorage.getItem("listHobbies")));
+    }
+    if (window.localStorage.getItem("jobs") !== null) {
+      setJobs(JSON.parse(window.localStorage.getItem("jobs")));
+    }
+    if (window.localStorage.getItem("graduation") !== null) {
+      setGraduation(JSON.parse(window.localStorage.getItem("graduation")));
+    }
+    if (window.localStorage.getItem("js") !== null) {
+      setJs(JSON.parse(window.localStorage.getItem("js")));
+    }
+    if (window.localStorage.getItem("Html5") !== null) {
+      setHtml5(JSON.parse(window.localStorage.getItem("Html5")));
+    }
+    if (window.localStorage.getItem("Css3") !== null) {
+      setCss3(JSON.parse(window.localStorage.getItem("Css3")));
+    }
+  }, []);
+
   return (
     <>
-      <div className="BodyApp">
-        <div className="BodyBlueArea">
-          <Avatar />
-          <Profile />
-          <Contact />
-          <Hobby />
-        </div>
-        <div className="BodyWhiteArea">
-          <div style={{ marginTop: "50px", width: "80%",marginLeft:"20px" }}>
-            <History icone={"SuitCase"} campo={"Empregos"} />
-            <div>
-              <ul style={{marginLeft:'30px'}}>
-                <li>
-                  <Period
-                    Date={"2016-2022"}
-                    Local={"Prefeitura Municipal de Ipaba"}
-                    Work={"Vigia"}
-                    Description={
-                      "Atuei durante este periodo com exito em minhas atividades"
-                    }
-                  />
-                </li>
-              </ul>
-            </div>
-            <History icone={"Hat"} campo={"Formação"} />
-            <div>
-              <ul style={{marginLeft:'30px'}}>
-                <li>
-                  <Period
-                    Date={"2010-2013"}
-                    Local={"Escola Estatual Manoel Machado Franco"}
-                    Work={"Ensino Médio"}
-                    Description={""}
-                  />
-                </li>
-                <li>
-                  <Period
-                    Date={"2014-2016"}
-                    Local={"Escola Tecnica Vale do Aço"}
-                    Work={"Tecnico em informática"}
-                    Description={""}
-                  />
-                </li>
-              </ul>
-            </div>
-            <History icone={"Book"} campo={"Habilidades"} />
-            <Skill />
-          </div>
-        </div>
-      </div>
-      <Footer/>
+      <HashRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Formulario
+                photo={photo}
+                setPhoto={setPhoto}
+                nome={nome}
+                setNome={setNome}
+                profissao={profissao}
+                setProfissao={setProfissao}
+                profile={profile}
+                setProfile={setProfile}
+                contact={contact}
+                setContact={setContact}
+                facebook={facebook}
+                setFacebook={setFacebook}
+                instagram={instagram}
+                setInstagram={setInstagram}
+                gitHub={gitHub}
+                setGitHub={setGitHub}
+                listHobbies={listHobbies}
+                setListHobbies={setListHobbies}
+                jobs={jobs}
+                setJobs={setJobs}
+                graduation={graduation}
+                setGraduation={setGraduation}
+                rust={rust}
+                setRust={setRust}
+                js={js}
+                setJs={setJs}
+                react={react}
+                setReact={setReact}
+                Html5={Html5}
+                setHtml5={setHtml5}
+                Python={Python}
+                setPython={setPython}
+                Css3={Css3}
+                setCss3={setCss3}
+                java={java}
+                setJava={setJava}
+              />
+            }
+          ></Route>
+          <Route
+            path="/Curriculo"
+            element={
+              <Curriculo
+                photo={photo}
+                nome={nome}
+                profissao={profissao}
+                profile={profile}
+                contact={contact}
+                facebook={facebook}
+                instagram={instagram}
+                gitHub={gitHub}
+                listHobbies={listHobbies}
+                jobs={jobs}
+                graduation={graduation}
+                rust={rust}
+                setRust={setRust}
+                js={js}
+                setJs={setJs}
+                react={react}
+                setReact={setReact}
+                Html5={Html5}
+                setHtml5={setHtml5}
+                Python={Python}
+                setPython={setPython}
+                Css3={Css3}
+                setCss3={setCss3}
+                java={java}
+                setJava={setJava}
+              />
+            }
+          ></Route>
+        </Routes>
+      </HashRouter>
     </>
   );
 }

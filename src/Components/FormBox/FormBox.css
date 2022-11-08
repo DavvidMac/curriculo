@@ -1,0 +1,25 @@
+.FormBoxContainer{
+    margin: auto;
+    margin-top: 10px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+}
+.FormBoxTitle{
+    margin: 0;
+    text-indent: 30px;
+    background-color: #333;
+    font-weight: 300;
+}
+textarea{
+margin:auto;
+width:99%;
+height: 60px;
+display: block;
+resize: none;
+}
+.FormBoxChildren{
+    display: "flex";
+    flex-direction: row;
+    flex-wrap:wrap;
+}
