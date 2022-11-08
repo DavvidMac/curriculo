@@ -22,6 +22,7 @@ function App() {
   const [Css3, setCss3] = React.useState(false);
   const [java, setJava] = React.useState(false);
   const [rust, setRust] = React.useState(false);
+  const [Cpp, setCpp] = React.useState(false);
 
   React.useEffect(() => {
     if (window.localStorage.getItem("nome") !== null) {
@@ -62,6 +63,9 @@ function App() {
     }
     if (window.localStorage.getItem("Css3") !== null) {
       setCss3(JSON.parse(window.localStorage.getItem("Css3")));
+    }
+    if (window.localStorage.getItem("Cpp") !== null) {
+      setCss3(JSON.parse(window.localStorage.getItem("Cpp")));
     }
   }, []);
 
@@ -109,6 +113,8 @@ function App() {
                 setCss3={setCss3}
                 java={java}
                 setJava={setJava}
+                Cpp={Cpp}
+                setCpp={setCpp}
               />
             }
           ></Route>
@@ -141,6 +147,8 @@ function App() {
                 setCss3={setCss3}
                 java={java}
                 setJava={setJava}
+                Cpp={Cpp}
+                setCpp={setCpp}
               />
             }
           ></Route>

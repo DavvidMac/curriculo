@@ -27,6 +27,8 @@ const Curriculo = ({
   Python,
   Css3,
   java,
+  Cpp,
+  setCpp
 }) => {
   return (
     <>
@@ -83,6 +85,7 @@ const Curriculo = ({
               Python={Python}
               Css3={Css3}
               java={java}
+              Cpp={Cpp}
             />
           </div>
         </div>

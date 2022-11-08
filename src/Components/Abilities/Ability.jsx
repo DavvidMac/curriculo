@@ -1,5 +1,6 @@
 import React from 'react'
 import './Ability.css'
+import {CgCPlusPlus} from 'react-icons/cg'
 import { FaJava, FaHtml5, FaPython, FaCss3, FaReact, FaJs, FaRust } from "react-icons/fa";
 const Ability = ({rust,
     setRust,
@@ -14,7 +15,10 @@ const Ability = ({rust,
     Css3,
     setCss3,
     java,
-    setJava}) => {
+    setJava,
+    Cpp,
+    setCpp
+}) => {
 
     function handleChange(item, target) {
         item(target.checked)
@@ -41,6 +45,9 @@ const Ability = ({rust,
         if (window.localStorage.getItem("rust") !== null) {
             setRust(JSON.parse(window.localStorage.getItem("rust")))
         }
+        if (window.localStorage.getItem("Cpp") !== null) {
+            setRust(JSON.parse(window.localStorage.getItem("Cpp")))
+        }
     }, [setJs,setRust,setJava,setCss3,setPython,setHtml5,setReact])
     React.useEffect(() => {
     window.localStorage.setItem("js", js);
@@ -50,7 +57,8 @@ const Ability = ({rust,
         window.localStorage.setItem("Css3", Css3);
         window.localStorage.setItem("java", java);
         window.localStorage.setItem("rust", rust);
-    },[js,react,Html5,rust,java,Css3,Python])
+        window.localStorage.setItem("Cpp", Cpp);
+    },[js,react,Html5,rust,java,Css3,Python,Cpp])
     return (
         <form>
             <label>
@@ -115,6 +123,15 @@ const Ability = ({rust,
                     onChange={(e) => handleChange(setRust, e.target)}
                 />
                 <FaRust size={30} />
+            </label>
+            <label>
+                <input
+                    type='checkbox'
+                    value='termos'
+                    checked={Cpp}
+                    onChange={(e) => handleChange(setCpp, e.target)}
+                />
+                <CgCPlusPlus size={30} />
             </label>
         </form>
     )

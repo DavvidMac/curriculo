@@ -1,5 +1,6 @@
 import React from "react";
 import { FaJs, FaHtml5, FaCss3, FaReact,FaRust,FaJava,FaPython } from "react-icons/fa";
+import {CgCPlusPlus} from 'react-icons/cg'
 import "./Skill.css";
 const size = "30px";
 const Skill = ({
@@ -10,6 +11,7 @@ const Skill = ({
   Python,
   Css3,
   java,
+  Cpp
 }) => {
   console.log(Css3)
   return (
@@ -47,6 +49,11 @@ const Skill = ({
       {java && 
         <li>
           <FaJava size={size} />
+        </li>
+      }
+      {Cpp && 
+        <li>
+          <CgCPlusPlus size={size} />
         </li>
       }
     </ul>

@@ -43,6 +43,8 @@ const Formulario = ({
   setCss3,
   java,
   setJava,
+  Cpp,
+  setCpp,
 }) => {
   const [hobbie, setHobbie] = React.useState("");
 
@@ -269,6 +271,8 @@ const Formulario = ({
           setCss3={setCss3}
           java={java}
           setJava={setJava}
+          Cpp={Cpp}
+          setCpp={setCpp}
         />
       </FormBox>
       <Link to="/Curriculo" onClick={save}>
