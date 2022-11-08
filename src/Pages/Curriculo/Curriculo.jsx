@@ -28,7 +28,6 @@ const Curriculo = ({
   Css3,
   java,
   Cpp,
-  setCpp
 }) => {
   return (
     <>
